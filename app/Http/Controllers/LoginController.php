@@ -16,7 +16,17 @@ class LoginController extends Controller
             ->where("password", $pwd)
             ->get();
 
-        echo "<pre>";
-        print_r($records);
+        if ($records->isNotEmpty()) {
+            $req->session()->put("uid", $records[0]);
+            return redirect("dashboard");
+        } else {
+            return redirect("userform")->with("msg", "Invalid User!");
+        }
+    }
+
+    function logout(Request $req)
+    {
+        $req->session()->forget("uid");
+        return redirect("userform")->with("msg", "Successfully Logged out!");
     }
 }

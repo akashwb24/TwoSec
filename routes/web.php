@@ -10,5 +10,7 @@ Route::get('/', function () {
 
 
 Route::view('userform', 'user');
+Route::view('dashboard', 'dashboard1');
+Route::get('logout', [LoginController::class, 'logout']);
 
 Route::post('processform', [LoginController::class, 'login']);

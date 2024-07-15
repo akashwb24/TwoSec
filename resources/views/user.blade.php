@@ -28,17 +28,13 @@
             <button type="submit" class="btn btn-default">Login</button>
         </form>
     </div>
-    {{-- @if (Session('success'))
-        <div class="alert alert-success">
-            <strong>{{ Session('success') }}</strong>
+
+
+    @if (Session('msg'))
+        <div class="alert alert-danger">
+            <strong>{{ Session('msg') }}</strong>
         </div>
     @endif
-
-    @if (Session('error'))
-        <div class="alert alert-danger">
-            <strong>{{ Session('error') }}</strong>
-        </div>
-    @endif --}}
 
 </body>
 
