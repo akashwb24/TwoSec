@@ -10,7 +10,8 @@ Route::get('/', function () {
 
 
 Route::view('userform', 'user');
-Route::view('dashboard', 'dashboard1');
+Route::view('dashboard1', 'dashboard1')->middleware('checkLogin');
+Route::view('dashboard2', 'dashboard2')->middleware('checkLogin');
 Route::get('logout', [LoginController::class, 'logout']);
 
 Route::post('processform', [LoginController::class, 'login']);

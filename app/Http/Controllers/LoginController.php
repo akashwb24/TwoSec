@@ -18,7 +18,7 @@ class LoginController extends Controller
 
         if ($records->isNotEmpty()) {
             $req->session()->put("uid", $records[0]);
-            return redirect("dashboard");
+            return redirect("dashboard1");
         } else {
             return redirect("userform")->with("msg", "Invalid User!");
         }
