@@ -14,6 +14,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'checkLogin' => \App\Http\Middleware\TestLogin::class,
         ]);
+        $middleware->alias([
+            'testSessions' => \App\Http\Middleware\TestId::class, \App\Http\Middleware\TestName::class,
+        ]);
+
+        
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
